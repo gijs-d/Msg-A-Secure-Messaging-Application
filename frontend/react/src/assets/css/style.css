@@ -1,0 +1,177 @@
+:root {
+    --a-txt: white;
+    --bg-opaque: rgba(0, 0, 0, 0.7);
+    --body-bg: linear-gradient(to bottom right, #100, #232);
+    --body-color: #000;
+    --body-txt: white;
+    --dark-a-txt: white;
+    --dark-bg-opaque: rgba(0, 0, 0, 0.75);
+    --dark-body-color: #000;
+    --dark-body-txt: white;
+    --dark-h-opaque: rgba(255, 255, 255, 0.8);
+    --dark-header-icon-bg: black;
+    --dark-hov-bg: rgba(255, 255, 255, 0.2);
+    --dark-hover-bg: rgba(255, 255, 255, 0.3);
+    --dark-hover-txt: white;
+    --dark-icon-invert: 100%;
+    --dark-icon-invert: 100%;
+    --dark-input-bg: rgba(255, 255, 255, 0.1);
+    --dark-input-txt: white;
+    --dark-l-opaque: rgba(255, 255, 255, 0.1);
+    --dark-ll-opaque: rgba(255, 255, 255, 0.15);
+    --dark-lll-opaque: rgba(255, 255, 255, 0.25);
+    --dark-m-bg: black;
+    --dark-n-bg: rgba(255, 255, 255, 0.95);
+    --dark-o-bg: #444;
+    --dark-o2-bg: #333;
+    --dark-shadow: rgb(136, 136, 136);
+    --dark-shadow: rgb(127, 127, 127);
+    --dark-t-bg: rgba(0, 0, 0, 0.9);
+    --dark-text: white;
+    --h-opaque: rgba(255, 255, 255, 0.8);
+    --header-icon-bg: black;
+    --hover-bg: rgba(255, 255, 255, 0.2);
+    --hover-txt: white;
+    --icon-invert: 100%;
+    --input-bg: rgba(255, 255, 255, 0.1);
+    --input-txt: white;
+    --inv-opaque: rgba(0, 0, 0, 0.2);
+    --l-opaque: rgba(255, 255, 255, 0.1);
+    --light-a-txt: black;
+    --light-bg-opaque: rgba(255, 255, 255, 0.9);
+    --light-body-color: white;
+    --light-body-txt: black;
+    --light-h-opaque: rgba(0, 0, 0, 0.8);
+    --light-header-icon-bg: white;
+    --light-hov-bg: rgba(0, 0, 0, 0.1);
+    --light-hover-bg: rgba(0, 0, 0, 0.2);
+    --light-hover-txt: black;
+    --light-icon-invert: 0%;
+    --light-icon-invert: 0%;
+    --light-input-bg: rgba(0, 0, 0, 0.1);
+    --light-input-txt: black;
+    --light-l-opaque: rgba(0, 0, 0, 0.1);
+    --light-ll-opaque: rgba(0, 0, 0, 0.15);
+    --light-lll-opaque: rgba(0, 0, 0, 0.15);
+    --light-m-bg: white;
+    --light-n-bg: rgba(0, 0, 0, 0.8);
+    --light-o-bg: lightgray;
+    --light-o2-bg: rgb(231, 231, 231);
+    --light-shadow: rgb(127, 127, 127);
+    --light-shadow: rgb(127, 127, 127);
+    --light-t-bg: rgba(255, 255, 255, 0.9);
+    --light-text: black;
+    --ll-opaque: rgba(255, 255, 255, 0.15);
+    --lll-opaque: rgba(255, 255, 255, 0.25);
+    --shadow: rgb(136, 136, 136);
+    /* O  O  */
+    --dark-h-bg: black;
+    /* O  O  */
+    --light-h-bg: white;
+    /*------------------*/
+    --dark-body-bg: linear-gradient(to bottom right, #100, #232);
+    /*------------------*/
+    --light-body-bg: linear-gradient(to bottom right, #fffafa, #ccdfcc);
+    color-scheme: light;
+}
+
+html,
+body,
+#root {
+    background: var(--body-bg);
+    color: var(--body-txt);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.125rem;
+    height: 100%;
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
+    width: 100%;
+}
+html{
+    font-size: 16px;
+}
+
+main {
+    height: calc(100% - 50px);
+    overflow-y: auto;
+}
+
+main input[type="button"] {
+    padding: 10px;
+}
+
+input,
+textarea {
+    background-color: var(--input-bg);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--shadow);
+    color: var(--input-txt);
+    font-size: 1em;
+}
+
+input:hover {
+    background-color: var(--hover-bg);
+}
+
+textarea {
+    background-color: var(--body-color);
+}
+
+a {
+    color: var(--a-txt);
+}
+
+#fullscreenImageHolder {
+    align-items: center;
+    background-color: black;
+    box-sizing: border-box;
+    color: white !important;
+    display: none;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    margin: 0;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 420;
+}
+
+#fullscreenImageHolder .closeFullscreenImage {
+    background-color: rgba(255, 0, 0, 0.5);
+    height: 40px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 40px;
+}
+
+#fullscreenImageHolder .downloadFullscreenImage {
+    display: block;
+    height: 40px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 60px;
+}
+
+#fullscreenImageHolder .downloadFullscreenImage input {
+    height: 100%;
+    width: 100%;
+}
+
+#fullscreenImageHolder img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#fullscreenImageHolder input {
+    color: white !important;
+}
+
+#fullscreenImageHolder input:first-child {
+    left: 5px;
+}

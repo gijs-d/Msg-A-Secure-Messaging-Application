@@ -1,0 +1,150 @@
+header {
+    box-shadow: inset 0 0 10px var(--shadow), 0 0 10px var(--shadow);
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+}
+
+header .icons {
+    height: 100%;
+    position: relative;
+    width: 50px;
+}
+
+header .icons .icon {
+    -webkit-filter: invert(var(--icon-invert));
+    /* Safari/Chrome */
+    filter: invert(var(--icon-invert));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    height: 100%;
+    width: 100%;
+}
+
+header .icons.showSearchbar {
+    max-width: 400px;
+    min-width: 150px;
+    width: 30%;
+}
+
+header .icontop {
+    align-items: center;
+    background-color: var(--body-color);
+    border-radius: 100%;
+    box-shadow: 0 0 5px var(--shadow);
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    right: -3px;
+    top: -2px;
+    width: 20px;
+    z-index: 5;
+}
+
+header figure {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+header figure img {
+    box-sizing: content-box;
+    height: 100%;
+    padding: 0 1px;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+header nav {
+    flex-grow: 1;
+    height: 100%;
+}
+
+header nav ul {
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    box-shadow: inset 0 0 3px var(--shadow), 0 0 3px var(--shadow);
+    list-style: none;
+    padding: 0 0;
+}
+
+header nav ul li a {
+    display: flex;
+    height: 100%;
+    padding: 0;
+    text-decoration: none;
+    width: 100%;
+}
+
+header .icons:hover {
+    background-color: var(--hover-bg);
+}
+
+header nav ul li:hover {}
+
+#search {
+    display: flex;
+    position: relative;
+}
+
+#search input[type='button'] {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    border: none;
+    box-sizing: border-box;
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+
+#search input[type='text'] {
+    background-color: var(--body-color);
+    box-sizing: border-box;
+    width: calc(100% - 50px);
+}
+
+#searchresults {
+    background-color: var(--bg-opaque);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 0 15px var(--shadow);
+    height: fit-content;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 5;
+}
+
+#searchresults li {
+    background-color: transparent;
+    width: 100%;
+}
+
+#searchresults li a {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#search input[type='text']:hover {
+    background-color: var(--body-color);
+}
+
+#searchresults li:hover {
+    background-color: var(--hover-bg);
+    width: 100%;
+}

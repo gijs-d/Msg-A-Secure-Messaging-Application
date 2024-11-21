@@ -1,0 +1,528 @@
+.confirmDelete,
+.messagePage .chat .chatList .message .messageOptions .messageOptionsMenu {
+    background-color: var(--bg-opaque);
+    border-radius: 10px;
+    display: none;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+}
+
+.lock img {
+    pointer-events: none;
+}
+
+.messagePage .chat {
+    box-shadow: inset 0 0 5px var(--shadow);
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 170px;
+    /* merged */
+    position: relative;
+}
+
+.messagePage .chat .chatForm,
+.messagePage .chat .chatHeader,
+.messagePage .chat .chatList {
+    box-shadow: inset 0 0 5px var(--shadow);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+.messagePage .chat .chatForm {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+    margin: 0;
+    max-height: calc(100% - 200px);
+    min-height: 50px;
+    padding: 0;
+}
+
+.messagePage .chat .chatForm .inputfile {
+    background-color: var(--l-opaque);
+    box-sizing: border-box;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.messagePage .chat .chatForm .inputfile figure {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    height: 90px;
+    justify-content: center;
+    margin: 0;
+    padding: 5px;
+}
+
+.messagePage .chat .chatForm .inputfile figure img {
+    box-shadow: 0 0 15px var(--shadow);
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.messagePage .chat .chatForm .inputfile input {
+    background-color: transparent;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: none;
+    width: 50px;
+}
+
+.messagePage .chat .chatForm .inputForm {
+    border-radius: 25px;
+    box-shadow: 0 0 5px 3px var(--shadow);
+    box-sizing: border-box;
+    display: flex;
+    max-height: 100%;
+    width: 100%;
+}
+
+.messagePage .chat .chatForm .inputForm input,
+.messagePage .chat .chatForm #messageInput {
+    border-radius: 0;
+    box-shadow: inset 0 0 5px 3px var(--shadow);
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.messagePage .chat .chatForm .inputForm #sendImage {
+    background: no-repeat center;
+    background-size: 40px 40px;
+    border: thin solid black;
+    border-bottom-left-radius: 25px;
+    border-right: none;
+    border-top-left-radius: 25px;
+    box-shadow: none;
+    color: transparent;
+    display: inline;
+    filter: invert(var(--icon-invert));
+    height: 100%;
+    min-width: 50px;
+    width: 10%;
+}
+
+.messagePage .chat .chatForm .reply {
+    align-items: center;
+    background-color: var(--l-opaque);
+    border-radius: 20px;
+    box-shadow: 0 0 10px var(--shadow);
+    box-shadow: none;
+    box-sizing: border-box;
+    display: flex;
+    height: 40px;
+    margin: 0 0 10px;
+    padding: 5px;
+    padding-right: 0;
+    width: 100%;
+}
+
+.messagePage .chat .chatForm .reply input {
+    background-color: transparent;
+    box-shadow: none;
+    height: 40px;
+    width: 50px;
+}
+
+.messagePage .chat .chatForm .reply p {
+    flex-grow: 1;
+    margin: 0;
+    overflow: hidden;
+    padding: 5px 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap !important;
+    width: 50px;
+}
+
+.messagePage .chat .chatForm #messageInput {
+    background-color: transparent;
+    border: none;
+    border: thin solid var(--body-txt);
+    border-left: none;
+    border-radius: 0;
+    border-right: none;
+    box-shadow: none;
+    display: block;
+    flex-grow: 1;
+    font-family: inherit;
+    height: 50px;
+    max-height: 100%;
+    min-height: 50px;
+    min-width: 50px;
+    outline: none;
+    overflow-y: auto;
+    padding: 13px;
+    resize: none;
+}
+
+.messagePage .chat .chatForm input[type="submit"] {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    border: thin solid black;
+    border-bottom-right-radius: 25px;
+    border-left: none;
+    border-top-right-radius: 25px;
+    box-shadow: none;
+    color: transparent;
+    filter: invert(var(--icon-invert));
+    margin-right: 1px;
+    min-width: 50px;
+    width: 10%;
+}
+
+
+.messagePage .chat .chatHeader {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 50px;
+    justify-content: space-between;
+}
+
+.messagePage .chat .chatHeader .callBtn {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    filter: invert(var(--icon-invert));
+    height: 50px;
+    width: 50px;
+}
+
+.messagePage .chat .chatHeader .chatHeaderStart {
+    width: calc(100% - 100px);
+}
+
+.messagePage .chat .chatHeader #vcall.callBtn {
+    background-size: 35px 25px;
+}
+
+.messagePage .chat .chatHeader div.callBtns {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100px;
+}
+
+.messagePage .chat .chatHeader h2 {
+    align-items: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+}
+
+.messagePage .chat .chatHeader h2 a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.messagePage .chat .chatList {
+    box-shadow: inset 0 5px 5px var(--shadow);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+    height: calc(100% - 100px);
+    max-height: calc(100% - 100px);
+    min-height: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+
+.messagePage .chat .chatList .chatListBottom {
+    bottom: 50px;
+    display: relative;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+
+.messagePage .chat .chatList .message {
+    background-color: var(--ll-opaque);
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 0 15px var(--shadow);
+    box-sizing: border-box;
+    display: block;
+    height: max-content;
+    list-style: none;
+    margin: 3px 0;
+    margin-right: auto;
+    max-width: 90%;
+    min-height: min-content;
+    min-width: 100px;
+    overflow-wrap: break-word;
+    padding: 10px;
+    width: fit-content;
+}
+
+.messagePage .chat .chatList .message .imgMsg img {
+    max-height: 20vh;
+    width: 100%;
+}
+
+.messagePage .chat .chatList .message .messageOptions {
+    display: none;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+}
+
+.messagePage .chat .chatList .message .messageOptions .confirmDelete form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.messagePage .chat .chatList .message .messageOptions .messageMenuBtn {
+    background-color: transparent;
+    box-shadow: none;
+    height: 20px;
+    margin: 0;
+    padding: 0 5px;
+}
+
+.messagePage .chat .chatList .message .messageOptions .messageOptionsMenu li {
+    padding: 5px 10px;
+}
+
+.messagePage .chat .chatList .message .messageOptions .messageOptionsMenu.confirmDelete {
+    padding: 15px 10px;
+}
+
+.messagePage .chat .chatList .message .messageOptions .messageOptionsMenu.confirmDelete input {
+    margin: 10px;
+}
+
+.messagePage .chat .chatList .message .messageOptions .messageOptionsMenu.confirmDelete p {
+    margin: 0 auto;
+    padding: 10px 0 15px;
+    text-align: center;
+}
+
+.messagePage .chat .chatList .message .msg {
+    align-items: center;
+    box-sizing: content-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+
+.messagePage .chat .chatList .message .msg .imgMsg {
+    display: inline-block;
+    margin: 0;
+    max-height: 20vh;
+    max-width: 100%;
+    padding: 0;
+}
+
+.messagePage .chat .chatList .message .msg .imgMsgdiv {
+    align-items: center;
+    display: flex;
+    height: fit-content;
+    justify-content: flex-end;
+    max-width: 300px;
+    min-width: 100px;
+    width: fit-content;
+}
+
+.messagePage .chat .chatList .message .msg .imgMsgdiv div {
+    max-width: calc(100% - 30px);
+    min-width: 70px;
+}
+
+.messagePage .chat .chatList .message .msg .imgMsgT {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.messagePage .chat .chatList .message .msg figure.lock {
+    margin: 0 5px;
+}
+
+.messagePage .chat .chatList .message .msg p {
+    max-width: calc(100% - 30px);
+    overflow-wrap: break-word;
+}
+
+.messagePage .chat .chatList .message .msgIframe {
+    display: flex;
+    justify-content: center;
+}
+
+.messagePage .chat .chatList .message .msgIframe iframe {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--shadow);
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.messagePage .chat .chatList .message .replyMsg {
+    background-color: var(--l-opaque);
+    border-radius: 10px;
+    box-sizing: content-box;
+    cursor: pointer;
+    display: flex;
+    margin: 0 0 10px !important;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 5px 5px !important;
+    width: auto;
+}
+
+.messagePage .chat .chatList .message .replyMsg p {
+    box-sizing: content-box;
+    flex-grow: 1;
+    font-size: 0.8rem;
+    min-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap !important;
+    width: 150px;
+}
+
+.messagePage .chat .chatList .message p {
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+}
+
+.messagePage .chat .chatList .message p.msgTime {
+    display: none;
+}
+
+.messagePage .chat .chatList .message.received .messageOptions {
+    justify-content: flex-start;
+}
+
+.messagePage .chat .chatList .message.received .msg {
+    justify-content: flex-end;
+}
+
+.messagePage .chat .chatList .message.replyRef {
+    background-color: rgba(0, 255, 0, 0.1) !important;
+    box-shadow: 0 0 15px rgb(0, 255, 0) !important;
+}
+
+.messagePage .chat .chatList .message.send {
+    background-color: transparent;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 0;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.messagePage .chat .chatList .message.send .msg .imgMsgdiv {
+    justify-content: flex-start;
+}
+
+.messagePage .chat .chatList #scrollToBotomBtn {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    bottom: 30px;
+    box-shadow: none;
+    color: white;
+    filter: invert(var(--icon-invert));
+    font-weight: 600;
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    right: 30px;
+    text-align: center;
+    width: 40px;
+}
+
+.plainText {
+    display: none;
+}
+
+.lock:hover {
+    transform: scale(1.5);
+}
+
+.lock:hover+.decodeText+.plainText {
+    display: block;
+}
+
+.lock:hover+.plainText {
+    display: block;
+}
+
+.messagePage .chat .chatForm .inputfile input:hover {
+    background-color: inherit;
+}
+
+.messagePage .chat .chatForm .inputForm #sendImage::file-selector-button {
+    display: none;
+}
+
+.messagePage .chat .chatForm .inputForm #sendImage:hover {
+    background-color: var(--inv-opaque);
+}
+
+.messagePage .chat .chatForm .reply input:hover {
+    background-color: inherit;
+}
+
+.messagePage .chat .chatForm input[type="submit"]:hover {
+    background-color: var(--inv-opaque);
+}
+
+.messagePage .chat .chatHeader .callBtn:hover {
+    background-color: var(--inv-opaque);
+}
+
+.messagePage .chat .chatList .message .messageOptions .messageOptionsMenu li:hover {
+    background-color: var(--hover-bg);
+}
+
+.messagePage .chat .chatList .message .replyMsg:hover {
+    background-color: var(--ll-opaque);
+}
+
+.messagePage .chat .chatList .message:first-of-type .messageOptions .messageOptionsMenu,
+.messagePage .chat .chatList .message:nth-of-type(2) .messageOptions .messageOptionsMenu {
+    bottom: 100%;
+    top: unset;
+}
+
+.messagePage .chat .chatList .message:hover .messageOptions {
+    display: flex;
+}
+
+.messagePage .chat .chatList .message:hover p.msgTime {
+    display: block;
+}
+
+#messageInput:focus {
+    border: none;
+}

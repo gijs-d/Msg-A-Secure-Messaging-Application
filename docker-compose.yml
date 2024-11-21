@@ -1,0 +1,77 @@
+version: "3.8"
+
+services:
+  mongodb:
+    container_name: $COMPOSE_PROJECT_NAME-mongodb
+    image: mongo
+    restart: unless-stopped
+    env_file: ./.env
+    logging:
+      driver: none
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$MONGODB_USER
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGODB_PASSWORD
+    ports:
+      - $MONGODB_LOCAL_PORT:$MONGODB_DOCKER_PORT
+    volumes:
+      - db:/data/db
+    networks:
+      - mern-innet
+
+  backend:
+    container_name: $COMPOSE_PROJECT_NAME-backend
+    depends_on:
+      - mongodb
+    build: ./backend
+    restart: always
+    env_file: ./.env
+    ports:
+      - $BACKEND_LOCAL_PORT:$BACKEND_DOCKER_PORT
+    environment:
+      - MONGODB_USER=$MONGODB_USER
+      - MONGODB_HOST=$COMPOSE_PROJECT_NAME-$MONGODB_HOST
+      - MONGODB_PASSWORD=$MONGODB_PASSWORD
+      - MONGODB_DATABASE=$MONGODB_DATABASE
+      - MONGODB_PORT=$MONGODB_DOCKER_PORT
+      - BACKEND_DOCKER_PORT=$BACKEND_DOCKER_PORT
+      - CLIENT_ORIGIN=$CLIENT_ORIGIN
+      - FCM_PRIVATE_KEY=$FCM_PRIVATE_KEY
+      - FCM_PRIVATE_KEY_ID=$FCM_PRIVATE_KEY_ID
+      - FCM_PROJECT_ID=$FCM_PROJECT_ID
+      - FCM_CLIENT_EMAIL=$FCM_CLIENT_EMAIL
+      - FCM_CLIENT_ID=$FCM_CLIENT_ID
+      - FCM_CLIENT_X509_CERT_URL=$FCM_CLIENT_X509_CERT_URL
+      - SESSION_SECRET=$SESSION_SECRET
+      - NODE_ENV=$NODE_ENV
+    networks:
+      - mern-innet
+      - mern-outnet
+
+  frontend:
+    container_name: $COMPOSE_PROJECT_NAME-frontend
+    depends_on:
+      - backend
+    build: 
+      context: ./frontend
+    restart: always
+    env_file: ./.env
+    ports:
+      - $FRONTEND_LOCAL_PORT:$FRONTEND_DOCKER_PORT
+    environment:
+      - FRONTEND_DOCKER_PORT=$FRONTEND_DOCKER_PORT
+      - BACKEND_DOCKER_PORT=$BACKEND_DOCKER_PORT
+      - BACKEND_DOCKER_HOST=$COMPOSE_PROJECT_NAME-$BACKEND_DOCKER_HOST
+      - NODE_ENV=$NODE_ENV
+    networks:
+      - mern-outnet
+
+
+networks:
+  mern-innet:
+    driver: bridge
+
+  mern-outnet:
+    driver: bridge
+
+volumes:
+  db:

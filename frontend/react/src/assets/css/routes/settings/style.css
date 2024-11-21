@@ -1,0 +1,99 @@
+.settingsPage {
+    text-align: center;
+}
+
+.settingsPage #logout {
+    display: block;
+    font-size: 1.2em;
+    margin: 60px auto 0;
+    max-width: 600px;
+    min-width: 200px;
+    padding: 15px;
+    width: 90%;
+    width: 90%;
+}
+
+.settingsPage details {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 600px;
+    min-width: 200px;
+    width: 90%;
+}
+
+.settingsPage details form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.settingsPage details form input,
+.settingsPage details form textarea {
+    align-self: center;
+    font-size: 1em;
+    margin: 5px 0;
+    width: 49%;
+}
+
+.settingsPage details form input[type="button"],
+.settingsPage details form input[type="submit"] {
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+}
+
+.settingsPage details form label {
+    align-self: center;
+    margin: 5px 0;
+    text-align: right;
+    width: 49%;
+}
+
+.settingsPage details summary {
+    border-bottom: thin solid var(--shadow);
+    box-sizing: border-box;
+    font-size: 1.2em;
+    margin: 0 auto;
+    padding: 15px;
+    width: 100%;
+}
+
+.settingsPage details[open] {
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--shadow);
+    overflow: hidden;
+}
+
+.settingsPage details[open] summary {
+    background-color: var(--l-opaque);
+}
+
+.settingsPage details form label::after {
+    content: ':';
+}
+
+.settingsPage details:nth-of-type(1) summary {
+    border-top: thin solid var(--shadow);
+}
+
+#canvas {
+    margin: 0 auto;
+}
+
+#reader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+#reader video {
+    max-width: 100%;
+}
+
+#reader__scan_region {
+    display: flex;
+    justify-content: center;
+}

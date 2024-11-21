@@ -1,0 +1,157 @@
+.callingBtn {
+    border-radius: 100%;
+    height: 50px;
+    margin: 0 10px;
+    width: 50px;
+}
+
+.callingBtn input {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 100%;
+    filter: invert(var(--icon-invert));
+    height: 100%;
+    width: 100%;
+}
+
+.callingBtns {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* merged */
+    align-self: center;
+    box-sizing: content-box;
+    margin: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.callingPage {
+    bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.callingPage h2 {
+    align-self: center;
+    margin: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.stripe {
+    border: 2px solid black;
+    border-radius: 10px;
+    filter: invert(var(--icon-invert));
+    left: -10%;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: rotate(-45deg);
+    width: 120%;
+    z-index: 10;
+}
+
+.callingBtns input:hover {
+    background-color: var(--inv-opaque);
+}
+
+#anserCall {
+    background-color: greenyellow;
+    box-shadow: 0 0 10px greenyellow;
+    height: 75px;
+    margin-left: 40%;
+    width: 75px;
+}
+
+#anserCall input {
+    background-size: 70%;
+}
+
+#disableVideo input {
+    background-size: 70%;
+}
+
+#disableVideo,
+#muteFriend,
+#muteMic {
+    position: relative;
+}
+
+#endCall {
+    background-color: red;
+    box-shadow: 0 0 10px red;
+    height: 75px;
+    width: 75px;
+}
+
+#muteFriend input {
+    background-size: 60%;
+}
+
+#muteMic input {
+    background-size: 70%;
+}
+
+#videoDiv {
+    align-items: center;
+    align-self: center;
+    background-color: black;
+    display: flex;
+    height: calc(100% - 50px - 85px);
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+#videoDiv .smallVid {
+    display: block;
+    height: auto;
+    max-width: 300px;
+    min-width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+}
+
+#videoDiv video {
+    flex-grow: 2;
+    flex-shrink: 2;
+    max-height: 100%;
+    width: 100%;
+}
+
+#videoMenu {
+    position: relative;
+}
+
+#videoMenuList {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    bottom: 100%;
+    margin: 0;
+    min-width: 200px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+}
+
+#videoMenuList li {
+    list-style: none;
+}
+
+#volumeSliderh {
+    filter: hue-rotate(45deg);
+    overflow: hidden;
+}
+
+#anserCall input:hover,
+#endCall input:hover {
+    background-color: var(--hover-bg);
+}

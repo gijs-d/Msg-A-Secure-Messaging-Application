@@ -1,0 +1,83 @@
+.dragg {
+    display: block;
+    height: 50px;
+}
+
+.lock {
+    display: block;
+    flex-shrink: 0;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+}
+
+.lock img {
+    width: 100%;
+}
+
+.messagePage {
+    display: flex;
+    position: relative;
+}
+
+.messagePage .closed {
+    display: none !important;
+}
+
+.messagePage .displayNav {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: none;
+    color: black !important;
+    cursor: pointer;
+    display: block;
+    filter: invert(var(--icon-invert));
+    float: left;
+    font-family: monospace;
+    font-weight: bolder;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+}
+
+.messagePage .displayNav#openBar {
+    margin-right: 10px;
+}
+
+#warnMsg {
+    align-items: center;
+    animation: slideIn 2s forwards, slideIn 2s reverse 10s forwards;
+    background-color: var(--bg-opaque);
+    box-shadow: 0 0 15px var(--shadow);
+    box-shadow: 0 0 15px var(--shadow);
+    display: flex;
+    font-weight: 600;
+    height: 30px;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: -30px;
+    width: 100%;
+    z-index: 10;
+}
+
+#warnMsg a {
+    padding: 0 5px;
+}
+
+@keyframes slideIn {
+    from {
+        top: -30px;
+    }
+
+    to {
+        top: 0px;
+    }
+
+}
