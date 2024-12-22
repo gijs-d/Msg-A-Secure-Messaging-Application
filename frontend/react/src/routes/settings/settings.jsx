@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Keys from './parts/keys';
 import OnOffSlider from '../../parts/slider';
-import { useUserLogdinContext, useThemeContext, useNotificationContext } from '../../providers';
+
+import { contexts } from '../../providers';
+const { useUserLogdinContext, useThemeContext, useNotificationContext } = contexts;
 
 export default function Settings() {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();

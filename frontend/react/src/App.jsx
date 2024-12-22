@@ -3,7 +3,8 @@ import Router from './routes/router';
 import Header from './parts/header/header';
 import './assets/css/style.css';
 
-import { useUserLogdinContext } from './providers';
+import { contexts } from './providers';
+const { useUserLogdinContext } = contexts;
 
 const App = () => {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import e2e from '../../../../lib/e2e';
 
 import FriendBarElem from './friendBarElem';
-import { useUserLogdinContext } from '../../../../providers';
+import { contexts } from '../../../../providers';
+const { useUserLogdinContext } = contexts;
 
 export default function FriendBarList({
     selectedFriend,

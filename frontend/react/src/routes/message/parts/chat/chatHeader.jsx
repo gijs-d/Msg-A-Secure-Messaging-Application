@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { useCallContext } from '../../../../providers';
-
 import arrowRight from '../../../../assets/media/arrow-right.png';
 import arrowBack from '../../../../assets/media/arrow-back.png';
 import iconCall from '../../../../assets/media/icon-call.png';
 import iconVideo from '../../../../assets/media/icon-video.png';
+
+import { contexts } from '../../../../providers';
+const { useCallContext } = contexts;
 
 export default function ChatHeader({ selectedFriend, displaySettings, setDisplaySettings }) {
     const { calling, setCalling } = useCallContext();

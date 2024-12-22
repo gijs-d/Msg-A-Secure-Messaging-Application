@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { socket } from '../../socket';
+import { socket } from '../../lib/socket';
 import e2e from '../../lib/e2e';
 import { Peer } from 'peerjs';
 
@@ -10,7 +10,8 @@ import iconMic from '../../assets/media/icon-mic.png';
 import iconVideo from '../../assets/media/icon-video.png';
 import iconMenu from '../../assets/media/icon-menu.png';
 
-import { useUserLogdinContext, useCallContext } from '../../providers';
+import { contexts } from '../../providers';
+const { useUserLogdinContext, useCallContext } = contexts;
 
 export default function Call() {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();

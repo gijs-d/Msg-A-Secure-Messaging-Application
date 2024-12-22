@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { socket } from '../../socket';
+import { socket } from '../../lib/socket';
 import e2e from '../../lib/e2e';
 
 import Chat from './parts/chat';
 import Sidebar from './parts/sidebar';
 
-import { useUserLogdinContext } from '../../providers';
+import { contexts } from '../../providers';
+const { useUserLogdinContext } = contexts;
 
 export default function Message() {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();

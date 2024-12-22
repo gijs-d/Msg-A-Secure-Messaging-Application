@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { socket } from '../../socket';
+import { socket } from '../../lib/socket';
 
 import iconAccount from '../../assets/media/icon-account.png';
 import iconMessage from '../../assets/media/icon-message.png';
@@ -10,7 +10,8 @@ import Searchbar from './searchbar';
 import icon from '../../../public/icon.png';
 import '../../assets/css/parts/header.css';
 
-import { useUserLogdinContext } from '../../providers';
+import { contexts } from '../../providers';
+const { useUserLogdinContext } = contexts;
 
 export default function Header() {
     const { userLogdin } = useUserLogdinContext();

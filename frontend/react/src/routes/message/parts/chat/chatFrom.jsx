@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import e2e from '../../../../lib/e2e';
-import { socket } from '../../../../socket';
+import { socket } from '../../../../lib/socket';
 
 import InputForm from './inputForm';
 

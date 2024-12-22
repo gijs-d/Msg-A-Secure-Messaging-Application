@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import { socket } from '../../socket';
+import { socket } from '../../lib/socket';
 
-import { useUserLogdinContext } from '../../providers';
+import { contexts } from '../../providers';
+const { useUserLogdinContext } = contexts;
 
 export default function Profile() {
     const [username, setUsername] = useState('');

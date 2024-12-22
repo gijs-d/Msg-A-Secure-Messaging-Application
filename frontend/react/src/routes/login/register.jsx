@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import * as forge from 'node-forge';
 import { NavLink } from 'react-router-dom';
 
-import { useUserLogdinContext } from '../../providers';
 import eyeSvg from '../../assets/media/eye.svg';
 import eyeLineSvg from '../../assets/media/eye-line.svg';
+
+import { contexts } from '../../providers';
+const { useUserLogdinContext } = contexts;
 
 export default function Register() {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();

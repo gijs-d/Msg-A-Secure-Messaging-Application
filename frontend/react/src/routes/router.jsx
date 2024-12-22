@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
 import LoginRoute from './login/login-route';
@@ -6,9 +6,9 @@ import AccountRoute from './account/account-route';
 import SettingsRoute from './settings/settings-route';
 import MessageRoute from './message/message-route';
 import CallMessageRoute from './call/call-route';
-import { socket } from '../socket';
 
-import { useUserLogdinContext, useCallContext } from '../providers';
+import { contexts } from '../providers';
+const { useUserLogdinContext, useCallContext } = contexts;
 
 const Router = () => {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();

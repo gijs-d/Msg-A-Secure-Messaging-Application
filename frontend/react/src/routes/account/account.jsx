@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { socket } from '../../socket';
+import { socket } from '../../lib/socket';
 
 export default function Account() {
     const [username, setUsername] = useState('');

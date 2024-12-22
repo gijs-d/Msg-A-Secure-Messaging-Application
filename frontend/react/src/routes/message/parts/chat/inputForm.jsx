@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import e2e from '../../../../lib/e2e';
-import { socket } from '../../../../socket';
 
 import camIcon from '../../../../assets/media/icon-camera.png';
 import arrowSend from '../../../../assets/media/arrow-send.png';

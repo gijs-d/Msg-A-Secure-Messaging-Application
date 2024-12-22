@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import e2e from '../../../../lib/e2e';
 
 import lockOpen from '../../../../assets/media/lock-open.png';

@@ -5,7 +5,7 @@ const fs = require('fs');
 module.exports = {
     mode: 'development',
     entry: './src/index.jsx',
-    watch: false,
+    watch: true,
     watchOptions: {
         aggregateTimeout: 3000,
         poll: 3000,
