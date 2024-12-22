@@ -5,11 +5,10 @@ import OnOffSlider from '../../parts/slider';
 import { contexts } from '../../providers';
 const { useUserLogdinContext, useThemeContext, useNotificationContext } = contexts;
 
-export default function Settings() {
+export default function SettingsPage() {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();
     const { notifications, setNotifications } = useNotificationContext();
     const { theme, setTheme } = useThemeContext();
-
     const [searchable, setSearchable] = useState(false);
     const [userId, setUserId] = useState('');
 
@@ -101,10 +100,9 @@ export default function Settings() {
             <details>
                 <summary>Download</summary>
                 <a href="/api/uploads/androidApk" download>
-                    msgv6.apk
+                    msgv7.apk
                 </a>
             </details>
-
             <input type="button" id="logout" value="Logout" onClick={logout} />
         </>
     );

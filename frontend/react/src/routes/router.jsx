@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
-import LoginRoute from './login/login-route';
-import AccountRoute from './account/account-route';
-import SettingsRoute from './settings/settings-route';
-import MessageRoute from './message/message-route';
-import CallMessageRoute from './call/call-route';
+import LoginRoute from './login/loginRoute';
+import AccountRoute from './account/accountRoute';
+import SettingsRoute from './settings/settingsRoute';
+import MessageRoute from './message/messageRoute';
+import CallMessageRoute from './call/callRoute';
 
 import { contexts } from '../providers';
 const { useUserLogdinContext, useCallContext } = contexts;

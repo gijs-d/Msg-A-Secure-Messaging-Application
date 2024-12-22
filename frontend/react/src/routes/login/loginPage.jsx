@@ -7,22 +7,19 @@ import eyeLineSvg from '../../assets/media/eye-line.svg';
 import { contexts } from '../../providers';
 const { useUserLogdinContext } = contexts;
 
-export default function Register() {
+export default function LoginPage() {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();
-
-    const [data, setData] = useState({ username: '', email: '', password: '' });
-    const [rPassword, setRPassword] = useState('');
+    const [data, setData] = useState({
+        email: '',
+        password: '',
+    });
     const [error, setError] = useState('');
     const [pwdVisibile, setPwdVisibile] = useState(false);
 
     const onSubmit = async e => {
         e.preventDefault();
-        if (!data.email || !data.password || !data.username || !rPassword) {
+        if (!data.email || !data.password) {
             setError('Please fill in all fields');
-            return;
-        }
-        if (data.password !== rPassword) {
-            setError('Passwords do not match');
             return;
         }
         //let sendData = data;
@@ -31,7 +28,7 @@ export default function Register() {
         //let hashPassword = md.digest().toHex()
         //sendData['password'] = hashPassword;
         const logdin = await (
-            await fetch('/api/login/register', {
+            await fetch('/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
@@ -43,12 +40,10 @@ export default function Register() {
         }
         setUserLogdin(logdin.id);
     };
-
     const onChange = async e => {
-        setData({ ...data, [e.target.name]: e.target.value });
-    };
-    const onChangeRepeat = async e => {
-        setRPassword(e.target.value);
+        const newdata = data;
+        newdata[e.target.name] = e.target.value;
+        setData({ ...newdata });
     };
     const togglePwdVisibility = e => {
         e.target.parentNode.previousElementSibling.focus();
@@ -58,16 +53,7 @@ export default function Register() {
     return (
         <section>
             <form onSubmit={onSubmit}>
-                <h2>Register</h2>
-                <label htmlFor="username">Username</label>
-                <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    value={data.username}
-                    onChange={onChange}
-                    required
-                />
+                <h2>Login</h2>
                 <label htmlFor="email">Email</label>
                 <input
                     type="email"
@@ -96,19 +82,12 @@ export default function Register() {
                         </span>
                     )}
                 </div>
-                <label htmlFor="rPassword">Repeat Password</label>
-                <input
-                    type="password"
-                    id="rPassword"
-                    value={rPassword}
-                    onChange={onChangeRepeat}
-                    required
-                />
+
                 {error && <p className="formError">{error}</p>}
-                <input value="Register" type="submit" />
+                <input value="Login" type="submit" />
                 <p>
-                    Already registered?
-                    <NavLink to="/login">Login here.</NavLink>
+                    Don&apos;t have an account yet?
+                    <NavLink to="/login/register">Register here.</NavLink>
                 </p>
             </form>
         </section>

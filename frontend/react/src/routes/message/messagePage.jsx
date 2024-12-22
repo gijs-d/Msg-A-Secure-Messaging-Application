@@ -8,7 +8,7 @@ import Sidebar from './parts/sidebar';
 import { contexts } from '../../providers';
 const { useUserLogdinContext } = contexts;
 
-export default function Message() {
+export default function MessagePage() {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();
 
     const [selectedFriend, setSelectedFriend] = useState({

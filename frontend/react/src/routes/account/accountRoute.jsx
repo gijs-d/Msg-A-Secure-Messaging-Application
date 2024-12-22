@@ -3,16 +3,16 @@ import { Route, Routes } from 'react-router';
 
 import '../../assets/css/routes/account/style.css';
 
-import Account from './account';
-import Profile from './profile';
+import AccountPage from './accountPage';
+import ProfilePage from './profilePage';
 
 export default function LoginRoute() {
     return (
         <main className="accountPage">
             <Routes>
-                <Route exact path="/" element={<Account />} />
+                <Route exact path="/" element={<AccountPage />} />
                 <Route path="/profile/*">
-                    <Route path=":profileId" element={<Profile />} />
+                    <Route path=":profileId" element={<ProfilePage />} />
                 </Route>
             </Routes>
         </main>

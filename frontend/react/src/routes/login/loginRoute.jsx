@@ -3,15 +3,15 @@ import { Route, Routes } from 'react-router';
 
 import '../../assets/css/routes/login/style.css';
 
-import Login from './login';
-import Register from './register';
+import LoginPage from './loginPage';
+import RegisterPage from './registerPage';
 
 export default function LoginRoute() {
     return (
-        <main className="mainPage">
+        <main className="loginPage">
             <Routes>
-                <Route exact path="/" element={<Login />} />
-                <Route path="/register" element={<Register />} />
+                <Route exact path="/" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
             </Routes>
         </main>
     );

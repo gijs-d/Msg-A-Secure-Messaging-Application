@@ -13,7 +13,7 @@ import iconMenu from '../../assets/media/icon-menu.png';
 import { contexts } from '../../providers';
 const { useUserLogdinContext, useCallContext } = contexts;
 
-export default function Call() {
+export default function CallPage() {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();
     const { calling, setCalling } = useCallContext();
 

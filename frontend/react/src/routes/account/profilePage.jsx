@@ -5,7 +5,7 @@ import { socket } from '../../lib/socket';
 import { contexts } from '../../providers';
 const { useUserLogdinContext } = contexts;
 
-export default function Profile() {
+export default function ProfilePage() {
     const [username, setUsername] = useState('');
     const [userid, setUserid] = useState('');
     const [status, setStatus] = useState('');

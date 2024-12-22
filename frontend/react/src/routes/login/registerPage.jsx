@@ -7,19 +7,22 @@ import eyeLineSvg from '../../assets/media/eye-line.svg';
 import { contexts } from '../../providers';
 const { useUserLogdinContext } = contexts;
 
-export default function Login() {
+export default function RegisterPage() {
     const { userLogdin, setUserLogdin } = useUserLogdinContext();
-    const [data, setData] = useState({
-        email: '',
-        password: '',
-    });
+
+    const [data, setData] = useState({ username: '', email: '', password: '' });
+    const [rPassword, setRPassword] = useState('');
     const [error, setError] = useState('');
     const [pwdVisibile, setPwdVisibile] = useState(false);
 
     const onSubmit = async e => {
         e.preventDefault();
-        if (!data.email || !data.password) {
+        if (!data.email || !data.password || !data.username || !rPassword) {
             setError('Please fill in all fields');
+            return;
+        }
+        if (data.password !== rPassword) {
+            setError('Passwords do not match');
             return;
         }
         //let sendData = data;
@@ -28,7 +31,7 @@ export default function Login() {
         //let hashPassword = md.digest().toHex()
         //sendData['password'] = hashPassword;
         const logdin = await (
-            await fetch('/api/login', {
+            await fetch('/api/login/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
@@ -40,10 +43,12 @@ export default function Login() {
         }
         setUserLogdin(logdin.id);
     };
+
     const onChange = async e => {
-        const newdata = data;
-        newdata[e.target.name] = e.target.value;
-        setData({ ...newdata });
+        setData({ ...data, [e.target.name]: e.target.value });
+    };
+    const onChangeRepeat = async e => {
+        setRPassword(e.target.value);
     };
     const togglePwdVisibility = e => {
         e.target.parentNode.previousElementSibling.focus();
@@ -53,7 +58,16 @@ export default function Login() {
     return (
         <section>
             <form onSubmit={onSubmit}>
-                <h2>Login</h2>
+                <h2>Register</h2>
+                <label htmlFor="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    value={data.username}
+                    onChange={onChange}
+                    required
+                />
                 <label htmlFor="email">Email</label>
                 <input
                     type="email"
@@ -82,12 +96,19 @@ export default function Login() {
                         </span>
                     )}
                 </div>
-
+                <label htmlFor="rPassword">Repeat Password</label>
+                <input
+                    type="password"
+                    id="rPassword"
+                    value={rPassword}
+                    onChange={onChangeRepeat}
+                    required
+                />
                 {error && <p className="formError">{error}</p>}
-                <input value="Login" type="submit" />
+                <input value="Register" type="submit" />
                 <p>
-                    Don&apos;t have an account yet?
-                    <NavLink to="/login/register">Register here.</NavLink>
+                    Already registered?
+                    <NavLink to="/login">Login here.</NavLink>
                 </p>
             </form>
         </section>

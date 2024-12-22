@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { socket } from '../../lib/socket';
 
-export default function Account() {
+export default function AccountPage() {
     const [username, setUsername] = useState('');
     const [userid, setUserid] = useState('');
     const [friends, setFriends] = useState([]);
